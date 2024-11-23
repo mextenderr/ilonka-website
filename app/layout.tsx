@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Playfair_Display, Noto_Serif } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
-    subsets: ["latin"],
-    display: "swap",
-});
-const notoSerif = Noto_Serif({
     subsets: ["latin"],
     display: "swap",
 });
