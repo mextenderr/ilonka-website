@@ -1,5 +1,6 @@
 import { FaHome } from "react-icons/fa";
 import { BsMailbox2 } from "react-icons/bs";
+import { ReactNode } from "react";
 
 export default function Address() {
     return (
@@ -37,7 +38,14 @@ export default function Address() {
     );
 }
 
-function AddressCard({ icon, title, street, zipcode }) {
+interface AddressCardProps {
+    icon: ReactNode;
+    title: string;
+    street: string;
+    zipcode: string;
+}
+
+function AddressCard({ icon, title, street, zipcode }: AddressCardProps) {
     return (
         <div className="flex w-3/4 md:w-2/5 flex-col gap-3 border border-slate-400 py-3 px-5 rounded-2xl shadow">
             <div className="flex items-center gap-5 font-semibold">
