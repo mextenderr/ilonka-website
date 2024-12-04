@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display } from "next/font/google";
+import { ResponsiveProvider } from "./_hooks/ResponsiveContext";
 
 const playfair = Playfair_Display({
     subsets: ["latin"],
@@ -20,7 +21,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${playfair.className} antialiased`}>
-                {children}
+                <ResponsiveProvider>{children}</ResponsiveProvider>
             </body>
         </html>
     );
