@@ -14,6 +14,7 @@ export default function Hero() {
                         src="/ilonka.jpg"
                         alt="Ilonka"
                         fill
+                        priority
                     />
                 </div>
                 <div className="flex flex-col w-2/5 gap-14">
@@ -46,6 +47,7 @@ export default function Hero() {
                     src="/ilonka.jpg"
                     alt="Ilonka"
                     fill
+                    priority
                 />
             </div>
             <p className="w-4/5 text-center">

@@ -1,3 +1,4 @@
+"use client";
 import { FaHome } from "react-icons/fa";
 import { BsMailbox2 } from "react-icons/bs";
 import { ReactNode } from "react";
@@ -16,7 +17,7 @@ export default function Address() {
             <div className="flex flex-col w-11/12 md:w-1/2 gap-16">
                 <iframe
                     className="w-full h-60 md:h-96"
-                    src={`https://www.google.com/maps/embed/v1/place?q=ilonka%20de%20vos&key=${process.env.GOOGLE_MAPS_KEY}`}
+                    src={`https://www.google.com/maps/embed/v1/place?q=ilonka%20de%20vos&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}`}
                     loading="lazy"
                 />
                 <div className="flex flex-col items-center gap-10 justify-evenly md:flex-row">

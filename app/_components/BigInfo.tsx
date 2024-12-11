@@ -14,7 +14,7 @@ export default function BigInfo() {
                 </p>
             </div>
             <div className="relative w-3/4 md:w-1/4 aspect-[2835/1063] md:order-1">
-                <Image src="/AVIG.png" alt="AVIG" fill />
+                <Image src="/AVIG.png" alt="AVIG" fill priority />
             </div>
         </div>
     );
