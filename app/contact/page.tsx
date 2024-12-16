@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { BsSend, BsSendArrowUp, BsSendCheck } from "react-icons/bs";
 
 export default function ContactPage() {
@@ -14,11 +14,15 @@ export default function ContactPage() {
         message: "",
     });
 
-    function handleProductChange(e: any) {
+    function handleProductChange(e: ChangeEvent<HTMLSelectElement>) {
         handleChange(e);
     }
 
-    function handleChange(e: any) {
+    function handleChange(
+        e: ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >
+    ) {
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -26,7 +30,7 @@ export default function ContactPage() {
         });
     }
 
-    async function handleSubmit(e: any) {
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setLoading(true);
 
@@ -38,10 +42,10 @@ export default function ContactPage() {
             body: JSON.stringify(formData),
         })
             .then((res) => res.json())
-            .then((data) => {
+            .then(() => {
                 setCompleted(true);
             })
-            .catch((error) => {
+            .catch(() => {
                 setError(true);
             })
             .finally(() => {
