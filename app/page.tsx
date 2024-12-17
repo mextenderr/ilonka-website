@@ -1,4 +1,3 @@
-"use client";
 import Hero from "./_components/Hero";
 import Faq from "./_components/Faq";
 import BigInfo from "./_components/BigInfo";

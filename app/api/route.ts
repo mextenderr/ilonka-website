@@ -13,9 +13,9 @@ export async function POST(request: Request) {
 
     const mailOptions = {
         from: "ilonka.web.contact@gmail.com",
-        to: "max.van.oord@gmail.com",
-        subject: "Bericht vanuit contact formulier website",
-        text: `Naam: ${body.name}\nEmail: ${body.email}\n\nOnderwerp: ${body.onderwerp}\n\nBericht:\n${body.message}`,
+        to: "ilonkadevos@gmail.com",
+        subject: "Contact formulier",
+        text: `Naam: ${body.name}\nEmail: ${body.email}\nTelefoonnumer: ${body.tel}\n\nOnderwerp: ${body.onderwerp}\n\nBericht:\n${body.message}`,
     };
 
     try {

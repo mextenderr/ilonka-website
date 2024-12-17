@@ -1,4 +1,5 @@
 "use client";
+import { Phone } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { BsSend, BsSendArrowUp, BsSendCheck } from "react-icons/bs";
 
@@ -10,6 +11,7 @@ export default function ContactPage() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        tel: "",
         onderwerp: "Algemene Vragen",
         message: "",
     });
@@ -54,27 +56,33 @@ export default function ContactPage() {
     }
 
     return (
-        <div className="flex pt-32 flex-col md:h-screen md:flex-row gap-10 md:gap-24 pb-16 md:px-36 items-center justify-around bg-gradient-to-br from-30% from-background to-primary">
-            <div className="flex flex-col gap-10 md:gap-20 w-11/12 md:w-1/2 items-center">
-                <h2 className="text-3xl md:text-5xl text-center">Contact.</h2>
+        <div className="flex pt-32 flex-col xl:h-screen xl:flex-row gap-10 xl:gap-24 pb-16 xl:px-36 items-center justify-around bg-gradient-to-br from-30% from-background to-primary">
+            <div className="flex flex-col gap-10 xl:gap-20 w-11/12 max-w-[600px] xl:max-w-none xl:w-1/2 items-center">
+                <h2 className="text-3xl xl:text-5xl text-center">Contact.</h2>
                 <p className="text-center">
-                    U kunt met mij in contact komen door het contact formulier
-                    in te vullen. Ik ben tevens telefonsich bereikbaar op
-                    werkdagen tussen 9:00 en 17:00.
+                    Voor het maken van afspraken ben ik telefonisch bereikbaar
+                    van maandag t/m vrijdag van 9.00 tot 17.00 op onderstaand
+                    telefoonnummer
                 </p>
                 <a
-                    className="w-fit p-3 text-2xl font-medium"
-                    href="tel:+31629052041"
+                    className="flex items-center gap-4 w-fit p-3 text-2xl font-medium italic"
+                    href="tel:+31623195686"
                 >
-                    +31 6 29 05 20 41
+                    <Phone />
+                    <p className="pb-1.5">06-23 19 56 86</p>
                 </a>
+                <hr
+                    className={`h-0.5 my-8 w-3/4 rounded-full bg-slate-600 xl:hidden`}
+                />
+                <p className="text-center">
+                    Laat u liever een bericht achter? Doe dit dan geheel
+                    vrijblijvend via het contact formulier. Dan neem ik zo
+                    spoedig mogelijk contact met u op!
+                </p>
             </div>
-            <hr
-                className={`h-0.5 my-8 w-3/4 rounded-full bg-slate-600 md:hidden`}
-            />
             <form
                 onSubmit={handleSubmit}
-                className="w-11/12 md:w-1/2 flex flex-col gap-5 md:gap-7"
+                className="w-11/12 xl:w-1/2 flex flex-col gap-5 xl:gap-7 max-w-[600px] xl:max-w-none"
             >
                 <div>
                     <label
@@ -123,6 +131,35 @@ export default function ContactPage() {
                             const target = e.target as HTMLInputElement;
                             target.setCustomValidity(
                                 "Vul hier uw email adres in."
+                            );
+                        }}
+                        onInput={(e) => {
+                            const target = e.target as HTMLInputElement;
+                            target.setCustomValidity("");
+                        }}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="tel"
+                        className="block text-gray-700 font-bold mb-2"
+                    >
+                        Telefoonnumer:
+                    </label>
+                    <input
+                        type="tel"
+                        id="tel"
+                        name="tel"
+                        value={formData.tel}
+                        onChange={handleChange}
+                        className="w-full border rounded-md p-2"
+                        required
+                        disabled={completed || error}
+                        onInvalid={(e) => {
+                            const target = e.target as HTMLInputElement;
+                            target.setCustomValidity(
+                                "Vul hier uw telefoonnummer in."
                             );
                         }}
                         onInput={(e) => {
@@ -183,7 +220,7 @@ export default function ContactPage() {
 
                 <button
                     type="submit"
-                    className="left-0 right-0 mx-auto w-1/2 bg-gray-100 py-2 mt-6 md:mt-0 sm:py-3 px-4 sm:px-8 rounded-full"
+                    className="left-0 right-0 mx-auto w-1/2 bg-gray-100 py-2 mt-6 xl:mt-0 sm:py-3 px-4 sm:px-8 rounded-full"
                     disabled={completed || loading || error}
                 >
                     {completed ? (

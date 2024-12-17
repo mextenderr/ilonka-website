@@ -14,10 +14,10 @@ export default function ContactBanner() {
             href="/contact"
             className={`fixed right-4 md:right-6 bottom-4 md:bottom-6 flex items-center gap-2 md:gap-6 bg-slate-100 pr-3.5 md:pr-6 pl-0.5 py-0.5 rounded-3xl md:rounded-full hover:bg-slate-200 transition-all duration-500 ${
                 deviceContext.scrollY > 0 &&
-                !deviceContext.docBottomReached &&
+                (!deviceContext.docBottomReached || !deviceContext.isMobile) &&
                 pathName !== "/contact"
                     ? "mr-0"
-                    : "-mr-44 md:-mr-64"
+                    : "-mr-56 md:-mr-80"
             }`}
         >
             <div className="relative aspect-square w-12 md:w-24">
@@ -30,8 +30,10 @@ export default function ContactBanner() {
                 />
             </div>
             <div className="flex flex-col md:gap-1 items-center">
-                <p className="font-medium md:text-xl text-slate-900">Contact</p>
-                <MdOutgoingMail className="text-slate-900 text-sm md:text-xl" />
+                <p className="font-medium text-sm md:text-xl text-slate-900 text-center">
+                    Afspraak maken
+                </p>
+                <MdOutgoingMail className="text-slate-900 text md:text-xl" />
             </div>
         </Link>
     );

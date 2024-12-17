@@ -2,12 +2,20 @@
 import { FaHome } from "react-icons/fa";
 import { BsMailbox2 } from "react-icons/bs";
 import { ReactNode } from "react";
+import { Phone } from "lucide-react";
 
 export default function Address() {
     return (
         <div className="flex flex-col md:flex-row gap-20 py-24 md:py-32 items-center justify-around bg-secondary">
             <div className="flex flex-col items-center gap-20 w-full md:w-1/4">
                 <h2 className="text-3xl md:text-5xl text-center">Contact.</h2>
+                <a
+                    className="flex items-center gap-4 w-fit p-3 text-2xl font-medium italic"
+                    href="tel:+31623195686"
+                >
+                    <Phone />
+                    <p className="pb-1.5">06-23 19 56 86</p>
+                </a>
                 <p className="w-4/5 md:w-full text-center">
                     Neem telefonsich contact op om een afspraak te plannen.
                     Stuurt u liever een bericht? Dan kan dit ook via het contact

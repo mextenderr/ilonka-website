@@ -1,18 +1,8 @@
-import "./globals.css";
-import { Playfair_Display } from "next/font/google";
-import { ResponsiveProvider } from "./_hooks/ResponsiveContext";
-import TopBar from "./_components/TopBar";
-import ContactBanner from "./_components/ContactBanner";
 import { Metadata } from "next";
 
-const playfair = Playfair_Display({
-    subsets: ["latin"],
-    display: "swap",
-});
-
 export const metadata: Metadata = {
-    metadataBase: new URL("https://homeopathie-wateringen.nl"),
-    title: "Homeopathisch Arts & Coach | Ilonka de Vos",
+    metadataBase: new URL("https://homeopathie-wateringen.nl/contact"),
+    title: "Contact | Ilonka de Vos",
     description:
         "Welkom bij Ilonka, homeopathisch arts en coach. Klassieke homeopathie gecombineerd met een medische achtergrond voor persoonlijk en deskundig advies.",
     keywords: [
@@ -51,20 +41,10 @@ export const metadata: Metadata = {
     ],
 };
 
-export default function RootLayout({
+export default function ContactLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en">
-            <body className={`${playfair.className} antialiased`}>
-                <ResponsiveProvider>
-                    <TopBar />
-                    {children}
-                    <ContactBanner />
-                </ResponsiveProvider>
-            </body>
-        </html>
-    );
+    return children;
 }

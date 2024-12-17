@@ -22,13 +22,19 @@ export default function Hero() {
                         Homeopathisch
                         <br /> Arts & Coach
                     </h1>
-                    <p className="text-center">
+                    <p className="text-center text-lg">
                         Als homeopathisch arts ben ik lid van de
                         artsenvereniging voor integrale geneeskunde (AVIG) en
                         daaronder valt de vakgroep homeopathisch artsen
-                        Nederland (VHAN). Dat betekent dat ik de klassieke
-                        homeopathie uitoefen en dat ik ook regulier opgeleid
-                        arts ben.
+                        Nederland (VHAN).
+                        <br />
+                        <br />
+                        Oorspronkelijk ben ik opgeleid als regulier arts en
+                        vervolgens heb ik de opleiding tot homeopathisch arts
+                        gedaan. In mijn werk als homeopathisch arts beoefen ik
+                        de klassieke homeopathie. Mijn achtergrond als arts
+                        betekent dat ik het totale medische plaatje daarbij
+                        meeneem in mijn advies.
                     </p>
                 </div>
             </div>
@@ -41,7 +47,7 @@ export default function Hero() {
                 Homeopathisch
                 <br /> Arts & Coach
             </h1>
-            <div className="relative aspect-square w-10/12 max-w-96">
+            <div className="relative aspect-square w-9/12 max-w-96">
                 <Image
                     className="rounded-hero"
                     src="/ilonka.jpg"
@@ -53,9 +59,14 @@ export default function Hero() {
             <p className="w-4/5 text-center">
                 Als homeopathisch arts ben ik lid van de artsenvereniging voor
                 integrale geneeskunde (AVIG) en daaronder valt de vakgroep
-                homeopathisch artsen Nederland (VHAN). Dat betekent dat ik de
-                klassieke homeopathie uitoefen en dat ik ook regulier opgeleid
-                arts ben.
+                homeopathisch artsen Nederland (VHAN).
+                <br />
+                <br />
+                Oorspronkelijk ben ik opgeleid als regulier arts en vervolgens
+                heb ik de opleiding tot homeopathisch arts gedaan. In mijn werk
+                als homeopathisch arts beoefen ik de klassieke homeopathie. Mijn
+                achtergrond als arts betekent dat ik het totale medische plaatje
+                daarbij meeneem in mijn advies.
             </p>
         </div>
     );
