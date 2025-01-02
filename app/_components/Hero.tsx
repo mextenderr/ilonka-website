@@ -42,7 +42,7 @@ export default function Hero() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-evenly h-[120vh] bg-gradient-to-br from-30% from-background to-primary pt-24">
+        <div className="flex flex-col items-center justify-evenly gap-14 bg-gradient-to-br from-30% from-background to-primary pt-32 pb-8">
             <h1 className="text-3xl text-center">
                 Homeopathisch
                 <br /> Arts & Coach
